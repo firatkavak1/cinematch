@@ -1,0 +1,25 @@
+{
+  "name": "movie-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:prod": "tsx src/server.ts",
+    "clean": "rm -rf dist .tsbuildinfo"
+  },
+  "dependencies": {
+    "shared": "workspace:*",
+    "app-errors": "workspace:*",
+    "server-utils": "workspace:*",
+    "dotenv": "^16.4.0",
+    "axios": "^1.7.0",
+    "fastify": "^4.28.0",
+    "tsx": "^4.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^20.14.0"
+  }
+}

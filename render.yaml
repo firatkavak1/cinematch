@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: cinematch-api
+    runtime: node
+    plan: free
+    buildCommand: pnpm install && pnpm run build --filter=shared --filter=app-errors --filter=server-utils
+    startCommand: pnpm --filter movie-api run start:prod
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: PORT
+        value: 3001
+      - key: ENVIRONMENT
+        value: production
+      - key: TMDB_API_KEY
+        sync: false
+      - key: TMDB_READ_ACCESS_TOKEN
+        sync: false
+      - key: TMDB_BASE_URL
+        value: https://api.themoviedb.org/3
+      - key: OMDB_API_KEY
+        value: ""
+      - key: OMDB_BASE_URL
+        value: https://www.omdbapi.com
